@@ -62,9 +62,9 @@ def createDataset(inputPath, gtFile, outputPath, checkValid=True):
                     print('%s is not a valid image' % imagePath)
                     continue
             except:
-                print('error occured', i)
+                print('error occurred', i)
                 with open(outputPath + '/error_image_log.txt', 'a') as log:
-                    log.write('%s-th image data occured error\n' % str(i))
+                    log.write('%s-th image data occurred error\n' % str(i))
                 continue
 
         imageKey = 'image-%09d'.encode() % cnt

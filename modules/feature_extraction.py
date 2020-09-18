@@ -69,8 +69,8 @@ import torch.nn.functional as F
 #         self.GRCL = nn.Sequential(*self.GRCL)
 
 #     def forward(self, input):
-#         """ The input of GRCL is consistant over time t, which is denoted by u(0)
-#         thus wgf_u / wf_u is also consistant over time t.
+#         """ The input of GRCL is consistent over time t, which is denoted by u(0)
+#         thus wgf_u / wf_u is also consistent over time t.
 #         """
 #         wgf_u = self.wgf_u(input)
 #         wf_u = self.wf_u(input)

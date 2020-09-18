@@ -104,7 +104,7 @@ def validation(model, criterion, evaluation_loader, converter, opt):
         target = text_for_loss[:, 1:]  # without [GO] Symbol
         cost = criterion(preds.contiguous().view(-1, preds.shape[-1]), target.contiguous().view(-1))
 
-            # select max probabilty (greedy decoding) then decode index to character
+            # select max probability (greedy decoding) then decode index to character
         _, preds_index = preds.max(2)
         preds_str = converter.decode(preds_index, length_for_pred)
         labels = converter.decode(text_for_loss[:, 1:], length_for_loss)
@@ -122,7 +122,7 @@ def validation(model, criterion, evaluation_loader, converter, opt):
             pred = pred[:pred_EOS]  # prune after "end of sentence" token ([s])
             pred_max_prob = pred_max_prob[:pred_EOS]
 
-            # To evaluate 'case sensitive model' with alphanumeric and case insensitve setting.
+            # To evaluate 'case sensitive model' with alphanumeric and case insensitive setting.
             if opt.sensitive and opt.data_filtering_off:
                 pred = pred.lower()
                 gt = gt.lower()

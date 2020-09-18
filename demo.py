@@ -53,7 +53,7 @@ def demo(opt):
 
                 print("Decoder", i)
 
-                # select max probabilty (greedy decoding) then decode index to character
+                # select max probability (greedy decoding) then decode index to character
                 _, preds_index = preds.max(2)
                 preds_str = converter.decode(preds_index, length_for_pred)
 

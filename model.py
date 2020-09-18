@@ -47,7 +47,7 @@ class Model(nn.Module):
         visual_feature = self.AdaptiveAvgPool(visual_feature.permute(0, 3, 1, 2))  # [b, c, h, w] -> [b, w, c, h]
         visual_feature = visual_feature.squeeze(3)
 
-        """ Refiement branch """
+        """ Refinement branch """
         refiner = self.Refiner(visual_feature.contiguous())
 
         # Selective Contextual Refinement Block 
